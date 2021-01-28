@@ -65,7 +65,14 @@ if (isset($_GET["captcha"])) {
 							<div class="padding10 align-center">
 								<div class="input-control modern text" data-role="input">
 									<input type="text" id="captcha_input">
-									
+									<span class="label">Captcha</span>
+									<span class="informer">Vui lòng nhập mã xác nhận kế bên</span>
+									<span class="placeholder" style="display: block;">Nhập mã xác nhận</span>
+								</div>
+								<a onclick="refeshCaptcha()">
+									<img id="img_captcha" src="?captcha=1">
+									<span class="mif-loop2 mif-ani-pulse"></span>
+								</a>
 							</div>
 							<p class="align-center">
 								<button class="command-button icon-left primary text-shadow" onclick="sendCfs()">
