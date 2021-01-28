@@ -65,28 +65,7 @@ if (isset($_GET["captcha"])) {
 							<div class="padding10 align-center">
 								<div class="input-control modern text" data-role="input">
 									<input type="text" id="captcha_input">
-									<?php
-if(isset($_POST['submit'])){
-   $name;
-   $captcha;
-   if(isset($_POST['name'])){
-      $name = $_POST['name'];
-   }
-   if(isset($_POST['g-recaptcha-response'])){
-      $captcha = $_POST['g-recaptcha-response'];
-   }
-   if(!$captcha){
-      echo '<h2>Hay xac nhan CAPTCHA</h2>';
-   }else{
-      $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LedT9wSAAAAAHRdSVndnSjeiDtkx6hKWQ-NuWQw&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
-      if($response.success == false){
-         echo '<h2>SPAM!</h2>';
-      }else{
-         echo '<h2>'.$name.' Khong phai robot :)</h2>';
-      }
-   }
-}
-?>
+									
 							</div>
 							<p class="align-center">
 								<button class="command-button icon-left primary text-shadow" onclick="sendCfs()">
